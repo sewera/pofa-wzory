@@ -1,0 +1,167 @@
+\documentclass[12pt]{article}
+\usepackage[margin=0.4in]{geometry} 
+\usepackage{polski}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{amsmath, amsthm, amssymb, amsfonts, esint}
+\usepackage{multicol}
+\usepackage{xcolor}
+\setlength{\columnseprule}{1pt}
+\def\columnseprulecolor{\color{lightgray}}
+\DeclareMathOperator{\der}{\operatorname{d}\!}
+\newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
+\newcommand{\grayrule}{{\color{lightgray} \hrule}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter this block.
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{multicols}{3}
+
+\begin{equation*}
+    \lambda = \frac{c}{f}
+\end{equation*}
+
+\begin{equation*}
+    f = \frac{1}{T}
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \Vec{D} = \overline{\overline{\varepsilon}} \cdot \Vec{E}
+\end{equation*}
+
+\begin{equation*}
+    \Vec{B} = \overline{\overline{\mu}} \cdot \Vec{H}
+\end{equation*}
+
+\begin{equation*}
+    \Vec{J} = \overline{\overline{\sigma}} \cdot \Vec{E}
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \operatorname{grad} f = \nabla f = \left[
+            \frac{\partial f}{\partial x},\,
+            \frac{\partial f}{\partial y},\,
+            \frac{\partial f}{\partial z}
+    \right]
+\end{equation*}
+
+\begin{equation*}
+    \operatorname{div} \Vec{F}
+        = \nabla \cdot \Vec{F}
+        = \frac{\partial F_x}{\partial x}
+            + \frac{\partial F_y}{\partial y}
+            + \frac{\partial F_z}{\partial z}
+\end{equation*}
+
+\begin{equation*}
+    \mathrm{rot}(\Vec{F}) = \nabla \times \Vec{F}
+        = \begin{vmatrix}
+        \Vec{i_x} & \Vec{i_y} & \Vec{i_z} \\
+        \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+        F_x & F_y & F_z
+        \end{vmatrix}
+\end{equation*}
+
+\grayrule
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{equation*}
+    \oint\limits_C \Vec{F}\,\der \Vec{l}
+        = \iint\limits_{S(C)} \nabla \times \Vec{F}\,\der\Vec{a} 
+\end{equation*}
+
+\begin{equation*}
+    \oiint\limits_S \Vec{F} \, \der \Vec{a} = \iiint\limits_{V(S)} \nabla \Vec{F} \, \der\tau
+\end{equation*}
+
+\grayrule
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{equation*}
+    \begin{split}
+        \oint\limits_C \Vec{E} \, \der\Vec{l} &= - \frac{\der\varphi}{\der t}\\
+        \oint\limits_C \Vec{E} \, \der\Vec{l}
+            &= - \frac{\der}{\der t} \int\limits_S \Vec{B} \, \der\Vec{s}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \oint\limits_C \Vec{B} \, \der\Vec{l}
+            &= \mu I + \mu \varepsilon \frac{\der\Phi_E}{\der t}\\
+        \oint\limits_C \Vec{B} \, \der\Vec{l}
+            &= \mu I + \mu \varepsilon \frac{\der}{\der t} \int\limits_S \Vec{E} \, \der\Vec{s}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \varepsilon \, \oint\limits_S \Vec{E} \, \der\Vec{s} = q
+\end{equation*}
+
+\begin{equation*}
+    \oint\limits_S \Vec{B} \, \der\Vec{s} = 0
+\end{equation*}
+
+\grayrule
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{equation*}
+    \nabla \times \Vec{E} = - \frac{\partial \Vec{B}}{\partial t}
+\end{equation*}
+
+\begin{equation*}
+    \nabla \times \Vec{B} = \mu \Vec{j} + \mu \varepsilon \frac{\partial \Vec{E}}{\partial t}
+\end{equation*}
+
+\begin{equation*}
+    \nabla \times \Vec{H} = \Vec{J} + \frac{\partial \Vec{D}}{\partial t}
+\end{equation*}
+
+\begin{equation*}
+    \varepsilon \nabla \cdot \Vec{E} = \rho
+\end{equation*}
+
+\begin{equation*}
+    \nabla \cdot \Vec{D} = \rho
+\end{equation*}
+
+\begin{equation*}
+    \nabla \cdot \Vec{B} = 0
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \Vec{J_D} = \frac{\partial \Vec{D}}{\partial t}
+        = \varepsilon \frac{\partial \Vec{E}}{\partial t}
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \begin{split}
+        \Vec{n} (\Vec{D_2} - \Vec{D_1}) &= \rho s \\
+        \Vec{n} (\Vec{B_2} - \Vec{B_1}) &= 0 \\
+        \Vec{n} \times (\Vec{E_2} - \Vec{E_1}) &= 0 \\
+        \Vec{n} \times (\Vec{H_2} - \Vec{H_1}) &= \Vec{J_s}
+    \end{split}
+\end{equation*}
+
+\end{multicols}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{bottompar}
+    {\footnotesize \ttfamily (CC BY-SA 4.0) 2019 Błażej Sewera \par
+    src: https://github.com/jazzsewera/pofa-wzory}
+\end{bottompar}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Do not alter anything below this line.
+\end{document}
