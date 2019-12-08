@@ -4,15 +4,22 @@
 \usepackage[polish]{babel}
 \usepackage[utf8]{inputenc}
 \pagenumbering{gobble}
-\usepackage{amsmath, amsthm, amssymb, amsfonts, esint}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\let\lll\undefined
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{esint}
 \usepackage{multicol}
 \usepackage{xcolor}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
 \setlength{\columnseprule}{1pt}
 \def\columnseprulecolor{\color{lightgray}}
 \DeclareMathOperator{\der}{\operatorname{d}\!}
 \newenvironment{bottompar}{\par\vspace*{\fill}}{\clearpage}
 \newcommand{\grayrule}{{\color{lightgray} \hrule}}
-\definecolor{m-gray}{gray}{0.36}
+\definecolor{m-gray}{gray}{0.4}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -30,7 +37,8 @@
         \left[\Vec{E}\right] &= \frac{V}{m} \\
         \left[\Vec{H}\right] &= \frac{A}{m} \\
         \left[\Vec{D}\right] &= \frac{C}{m^2} \\
-        \left[\Vec{B}\right] &= \frac{Vs}{m^2}
+        \left[\Vec{B}\right] &= \frac{Vs}{m^2} \\
+              \left[w\right] &= \frac{J}{m^3}
     \end{split}
 \end{equation*}
 
@@ -39,7 +47,8 @@
         \left[\Vec{J}\right] &= \frac{A}{m^2} \\
         \left[\overline{\overline{\varepsilon}}\right] &= \frac{F}{m} \\
         \left[\overline{\overline{\mu}}\right] &= \frac{H}{m} \\
-        \left[\overline{\overline{\sigma}}\right] &= \frac{S}{m}
+        \left[\overline{\overline{\sigma}}\right] &= \frac{S}{m} \\
+        \left[S\right] &= \frac{W}{m^2}
     \end{split}
 \end{equation*}
 
@@ -52,6 +61,15 @@
         \mu_0 &= 4 \pi \cdot 10^{-7} \, \frac{H}{m} \\
         \rho_0 &= 0 \\
         j_0 &= 0
+    \end{split}
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \begin{split}
+        c &= \frac{1}{\sqrt{\mu_0 \varepsilon_0}} \approx 3 \cdot 10^8 \frac{m}{s} \\
+        v &= \frac{1}{\sqrt{\mu \varepsilon}} = \frac{c}{\sqrt{\mu_r \varepsilon_r}}
     \end{split}
 \end{equation*}
 
@@ -218,8 +236,165 @@
     \end{split}
 \end{equation*}
 
+\grayrule {\color{darkgray}\hrule} \grayrule
+
+\begin{equation*}
+    \omega = 2 \pi f
+\end{equation*}
+\begin{equation*}
+    \lambda = \frac{2 \pi}{\beta}
+\end{equation*}
+\begin{equation*}
+    \tan \delta = \frac{\sigma}{\omega \varepsilon}
+\end{equation*}
+\begin{equation*}
+    Z = \sqrt{\frac{j \omega \mu}{\sigma + j \omega \varepsilon}}
+\end{equation*}
+\begin{equation*}
+    \tan \delta = 0 \implies Z = \sqrt{\frac{\mu_r}{\varepsilon_r}} \cdot Z_0
+\end{equation*}
+\begin{equation*}
+    \begin{split}
+        \gamma &= \alpha + j \beta \\
+               &= \sqrt{j \omega \mu (\sigma + j \omega \varepsilon)} \\
+               &= j \omega \sqrt{\mu \varepsilon (1 - j \tan \delta)}
+    \end{split}
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \begin{split}
+        \tan \delta &\ll 1 \implies \\
+        \alpha &\approx \frac{\sigma}{2} \sqrt{\frac{\mu}{\varepsilon}} \\
+        \beta &\approx \omega \sqrt{\mu \varepsilon} \\
+        Z &\approx \sqrt{\frac{\mu}{\varepsilon}} \cdot e^{j \frac{\delta}{2}}
+    \end{split}
+\end{equation*}
+\grayrule
+\begin{equation*}
+    \begin{split}
+        \tan \delta &\gg 1 \implies \\
+        \alpha &\approx \beta \approx \sqrt{\frac{\omega \mu \sigma}{2}} \\
+        Z &\approx \sqrt{\frac{\omega \mu}{\sigma}} \cdot e^{j \frac{\pi}{4}}
+    \end{split}
+\end{equation*}
+
 \end{multicols}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{bottompar}
+    {\footnotesize \ttfamily (CC BY-SA 4.0) 2019 Błażej Sewera \par
+    src: https://github.com/jazzsewera/pofa-wzory}
+\end{bottompar}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newpage
+
+\begin{multicols}{3}
+
+\begin{equation*}
+    \Gamma = \frac{Z_2 - Z_1}{Z_2 + Z_1}
+\end{equation*}
+\begin{equation*}
+    \mathrm{WFS} = \frac{1 + |\Gamma|}{1 - |\Gamma|}
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \begin{split}
+        v_p &= \frac{\omega}{\beta} \\
+        v_g &= \frac{\partial \omega}{\partial \beta} \\
+        v_p \cdot v_g &= c^2
+    \end{split}
+\end{equation*}
+\begin{equation*}
+    \delta_p = \frac{1}{\alpha} \approx \sqrt{\frac{2}{\omega \mu \sigma}}
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \begin{split}
+        w &= w_E + w_H \\
+        w_E &= \frac{1}{2} \left(\Vec{E}\cdot\Vec{D}\right) \\
+        w_H &= \frac{1}{2} \left(\Vec{H}\cdot\Vec{B}\right) \\
+    \end{split}
+\end{equation*}
+\begin{equation*}
+    \Vec{S} = \Vec{E} \times \Vec{H}
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \begin{split}
+        E_{-} &= E_{ox} \Vec{i_x} \cos(\omega t - \beta z) \\
+              &+ E_{oy} \Vec{i_y} \cos(\omega t - \beta z)
+    \end{split}
+\end{equation*}
+\grayrule
+\begin{equation*}
+    \begin{split}
+        E_{\bigcirc} &= E_{o} \Vec{i_x} \cos(\omega t - \beta z) \\
+                     &+ E_{o} \Vec{i_y} \sin(\omega t - \beta z)
+    \end{split}
+\end{equation*}
+\grayrule
+\begin{equation*}
+    \begin{split}
+        E_{O} &= E_{ox} \Vec{i_x} \cos(\omega t - \beta z) \\
+              &+ E_{oy} \Vec{i_y} \sin(\omega t - \beta z)
+    \end{split}
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \begin{split}
+        T_E &= 1 + \Gamma \\
+        T_H &= 1 - \Gamma
+    \end{split}
+\end{equation*}
+
+\grayrule
+\begin{equation*}
+    \begin{split}
+        &Z_{f2 \, tr}(z = -d) \\
+        &= Z_{w2} \cdot \frac{e^{\gamma_2 d} + \Gamma_{23} e^{-\gamma_2 d}}{e^{\gamma_2 d} + \Gamma_{23} e^{-\gamma_2 d}}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        &[\sigma_2 = 0] \implies \\
+        &Z_{f2 \, tr}(z = -d) \\
+        &= Z_{w2} \cdot \frac{Z_{w3} + j Z_{w2} \tan(\beta_2 d)}{Z_{w2} + j Z_{w3} \tan(\beta_2 d)}
+    \end{split}
+\end{equation*}
+
+\begin{equation*}
+    \begin{split}
+        \Gamma_{12} &= \frac{Z_{f2 \, tr} - Z_{w1}}{Z_{f2 \, tr} + Z_{w1}} \\
+        \Gamma_{23} &= \frac{Z_{w3} - Z_{w2}}{Z_{w3} + Z_{w2}}
+    \end{split}
+\end{equation*}
+
+\grayrule
+
+\begin{equation*}
+    \begin{split}
+        d = \frac{\lambda}{4} \, &\wedge \, Z_{w2} = \sqrt{Z_{w1} \cdot Z_{w3}} \\
+                                                  &\Downarrow \\
+        \Gamma_{12} &= 0
+    \end{split}
+\end{equation*}
+
+\end{multicols}
 
 \begin{bottompar}
     {\footnotesize \ttfamily (CC BY-SA 4.0) 2019 Błażej Sewera \par
